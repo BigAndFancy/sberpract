@@ -22,7 +22,7 @@ public class DepartmentsServiceImpl implements DepartmentsService {
     }
 
     @Override
-    public void delete(long id) {
+    public void delete(Long id) {
         r_departments.deleteById(id);
     }
 

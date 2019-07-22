@@ -24,23 +24,4 @@ public class MainController {
         return "department";
     }
 
-    @RequestMapping(value = "/add-new-department", method=RequestMethod.GET)
-    public String addNewDepartmentPage() {
-        return "addNewDepartment";
-    }
-
-    @RequestMapping(value="/add-new-department", method=RequestMethod.POST)
-    public String addNewDepartment(@RequestParam(value="name") String name) {
-        Departments departments = new Departments();
-        departments.setName(name);
-        departmentsService.addDepartment(departments);
-        return "redirect:/";
-    }
-
-    @RequestMapping(value="delete/{id}", method=RequestMethod.GET)
-    public String deleteDepartment(@PathVariable Long id) {
-        Departments departments = departmentsService.getById(id);
-        departmentsService.delete(id);
-        return "redirect:/";
-    }
 }
